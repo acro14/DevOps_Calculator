@@ -7,21 +7,27 @@ public class calc_Test{
     public void logTruePositive(){
         assertEquals("Finding the log of double number",1.6789639750,calc.log(5.36),10);
         assertEquals("finding the log of integer number",1.6094379124341003,calc.log(5),10);
+        assertEquals("finding the log for true positive",Double.NEGATIVE_INFINITY,calc.log(0),10);
+        assertEquals("finding the log for true positive",Double.NaN,calc.log(-9),10);
     }
     @Test
     public void logFalsePositive(){
         assertNotEquals("Finding the log of double number",1.7789639750,calc.log(5.36));
         assertNotEquals("finding the log of integer number",1.7094379124341003,calc.log(5));
+        assertNotEquals("finding the log for false positive",5.63,calc.log(-9),10);
+
     }
     @Test
     public void sqrtTruePositive(){
         assertEquals("Finding the sqrt of double number",2.3151673805580453,calc.sqrt(5.36),10);
         assertEquals("finding the sqrt of integer number",2.23606797749979,calc.sqrt(5),10);
+        assertEquals("finding the sqrt for true positive",Double.NaN,calc.sqrt(-5.6),10);
     }
     @Test
     public void sqrtFalsePositive(){
         assertNotEquals("Finding the sqrt of double number false ",1.7789639750,calc.sqrt(5.36));
         assertNotEquals("finding the sqrt of integer number false",1.7094379124341003,calc.sqrt(5));
+        assertNotEquals("finding the sqrt for false positive",8.36,calc.sqrt(-5.6),10);
     }
     @Test
     public void factTruePositive(){
