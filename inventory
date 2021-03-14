@@ -1,4 +1,4 @@
-localhost
+localhost ansible_user=acro
 
 [ubuntu20]
-192.168.43.85
+192.168.43.85 ansible_user=ubuntu20
